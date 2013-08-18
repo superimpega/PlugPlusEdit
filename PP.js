@@ -6,19 +6,19 @@ PlugData = function(type, eventData){//Standarized message container.
 
 PlugSettings = {
 		notifications : true, //Global notifications flag
-		chatLevel : 1, //0 = no notification, 1 = Only mentions, 2 = mentions and friends, 3 = all
+		chatLevel : 2, //0 = no notification, 1 = Only mentions, 2 = mentions and friends, 3 = all
 		userLevel : 0, //0 = no notification, 1 = friends, 2 = all
 		autoWootDelay : 0, //Seconds to delay woot
-		autoWoot : false, //Persistent settings
-		autoJoin : false,
+		autoWoot : true, //Persistent settings
+		autoJoin : true,
 		pluglist : false,
 		songUpdate : 2, //0 = none, 1 = only friends, 2 = all
-		djUpdate: 1, //0 = none, 1 = only friends, 2 = all
+		djUpdate: 2, //0 = none, 1 = only friends, 2 = all
 		notifyTimeout: 7, //Time in seconds before the notification closes automatically. 0 means never timeout.
 		manMode : false,
 		allowBackgroundOverride : false,
 		allowAvatarOverride : false,
-		backgroundOverrideURL : "",
+		backgroundOverrideURL : "http://i.imgur.com/4L9QVPy.jpg",
 		audienceOverride : "http://i.imgur.com/Ph0vdkE.png",
 		boothOverride : "http://i.imgur.com/xUQPLcG.png",
 		djOverride : "http://i.imgur.com/fMbbnHZ.png"
@@ -92,7 +92,7 @@ PlugPlus = {
 		},
 		applySettings : function(){//Apply settings only if they are true. Default state is false.
 			if (PlugSettings.autoJoin){
-				setTimeout("PlugPlus.button.autojoin.attr('id','on');PlugPlus.autojoin();",1000);//Wait 1 second before sending anything. The event isn't ready.
+				setTimeout("PlugPlus.button.autojoin.attr('id','on');PlugPlus.autojoin();",500);//Wait 1 second before sending anything. The event isn't ready.
 			}
 			if (PlugSettings.autoWoot){
 				PlugPlus.button.autowoot.attr('id','on');
